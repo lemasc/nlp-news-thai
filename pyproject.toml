@@ -1,0 +1,21 @@
+[project]
+name = "nlp-news-thai-69"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.3.3",
+    "requests>=2.32",
+    "tqdm>=4.67",
+]
+
+[project.scripts]
+scrape = "scrape:main"
+
+[tool.setuptools]
+py-modules = ["scrape"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
