@@ -1,0 +1,16 @@
+[project]
+name = "nlp-news-thai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "datasets>=4.5.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.2",
+    "pandas>=3.0.1",
+    "pythainlp>=5.2.0",
+    "seaborn>=0.13.2",
+    "tqdm>=4.67.3",
+]
