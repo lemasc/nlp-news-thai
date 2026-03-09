@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = "==3.13.*"
 dependencies = [
     "datasets>=4.5.0",
+    "deepcut>=0.7.0.0",
     "gensim>=4.4.0",
     "ipywidgets>=8.1.8",
     "jupyterlab>=4.5.5",
@@ -13,6 +14,7 @@ dependencies = [
     "numpy>=2.4.2",
     "pandas>=3.0.1",
     "pip>=26.0.1",
+    "pyldavis>=3.4.1",
     "pythainlp>=5.2.0",
     "python-crfsuite>=0.9.12",
     "scikit-learn>=1.8.0",
@@ -28,7 +30,7 @@ cpu = [
   "torch>=2.9.1",
   "tensorflow>=2.20.0",
 ]
-cu130 = [
+cu126 = [
   "torch>=2.9.1",
   "tensorflow[and-cuda]>=2.20.0",
 ]
@@ -37,14 +39,14 @@ cu130 = [
 conflicts = [
   [
     { extra = "cpu" },
-    { extra = "cu130" },
+    { extra = "cu126" },
   ],
 ]
 
 [tool.uv.sources]
 torch = [
   { index = "pytorch-cpu", extra = "cpu" },
-  { index = "pytorch-cu130", extra = "cu130" },
+  { index = "pytorch-cu126", extra = "cu126" },
 ]
 
 [[tool.uv.index]]
@@ -53,6 +55,6 @@ url = "https://download.pytorch.org/whl/cpu"
 explicit = true
 
 [[tool.uv.index]]
-name = "pytorch-cu130"
-url = "https://download.pytorch.org/whl/cu130"
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
 explicit = true
