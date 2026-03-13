@@ -6,7 +6,6 @@ readme = "README.md"
 requires-python = "==3.13.*"
 dependencies = [
     "datasets>=4.5.0",
-    "deepcut>=0.7.0.0",
     "gensim>=4.4.0",
     "ipywidgets>=8.1.8",
     "jupyterlab>=4.5.5",
@@ -27,10 +26,12 @@ dependencies = [
 
 [project.optional-dependencies]
 cpu = [
+  "attacut>=1.0.6",
   "torch>=2.9.1",
   "tensorflow>=2.20.0",
 ]
 cu126 = [
+  "attacut>=1.0.6",
   "torch>=2.9.1",
   "tensorflow[and-cuda]>=2.20.0",
 ]

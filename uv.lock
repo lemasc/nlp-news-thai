@@ -199,6 +199,27 @@ wheels = [
 ]
 
 [[package]]
+name = "attacut"
+version = "1.0.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "docopt" },
+    { name = "fire" },
+    { name = "nptyping" },
+    { name = "numpy" },
+    { name = "pyyaml" },
+    { name = "six" },
+    { name = "ssg" },
+    { name = "torch", version = "2.10.0", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(sys_platform == 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "torch", version = "2.10.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(sys_platform != 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "torch", version = "2.10.0+cu126", source = { registry = "https://download.pytorch.org/whl/cu126" }, marker = "extra == 'extra-13-nlp-news-thai-cu126'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9c/08/6b905097d1cd72dabc50b867c68bda1f971412a7dfee37b5b68fae997258/attacut-1.0.6.tar.gz", hash = "sha256:ced9d8cd6b2817f6aeb441a2919b0f2da02b432294b08dc82702b40176a79bba", size = 1291004, upload-time = "2019-11-21T07:42:14.552Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f6/56/4ab7204bde7468be65d047578192975035d9bc4e786990a407a28a8f75b8/attacut-1.0.6-py3-none-any.whl", hash = "sha256:d04193149476d1c371c7d0177a4363ba70d1a6d6f7d2246a577669eb4ea93f2c", size = 1291601, upload-time = "2019-11-21T07:42:11.948Z" },
+]
+
+[[package]]
 name = "attrs"
 version = "25.4.0"
 source = { registry = "https://pypi.org/simple" }
@@ -420,7 +441,7 @@ name = "cuda-bindings"
 version = "12.9.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cuda-pathfinder", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
+    { name = "cuda-pathfinder", marker = "(sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'emscripten' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'win32' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/05/8b/b4b2d1c7775fa403b64333e720cfcfccef8dcb9cdeb99947061ca5a77628/cuda_bindings-12.9.4-cp313-cp313-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:cf8bfaedc238f3b115d957d1fd6562b7e8435ba57f6d0e2f87d0e7149ccb2da5", size = 11570071, upload-time = "2025-10-21T14:51:47.472Z" },
@@ -520,23 +541,6 @@ wheels = [
 ]
 
 [[package]]
-name = "deepcut"
-version = "0.7.0.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "h5py" },
-    { name = "numpy" },
-    { name = "pandas" },
-    { name = "scikit-learn" },
-    { name = "scipy" },
-    { name = "tensorflow" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/f4/6a/727aa66c5ead5e6e417023efa0815bc8dde66b5aea5ebe8951f2611a654d/deepcut-0.7.0.0.tar.gz", hash = "sha256:f3eca3035d842bfe9d94e9914d3018d7d95609fa983e8e27fe6e2c3636254ee2", size = 2012445, upload-time = "2019-11-06T05:12:42.777Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/ef/f3/ecda1d7dc51da0689b2df3d002541d0d04ac4db02c5d148eca48c8e3d219/deepcut-0.7.0.0-py3-none-any.whl", hash = "sha256:054b778236b75ee505fb79759e180972e8b50be9af4c741451beceab0bbd887b", size = 2011394, upload-time = "2019-11-06T05:12:38.656Z" },
-]
-
-[[package]]
 name = "defusedxml"
 version = "0.7.1"
 source = { registry = "https://pypi.org/simple" }
@@ -553,6 +557,12 @@ sdist = { url = "https://files.pythonhosted.org/packages/12/80/630b4b88364e9a8c8
 wheels = [
     { url = "https://files.pythonhosted.org/packages/50/3d/9373ad9c56321fdab5b41197068e1d8c25883b3fea29dd361f9b55116869/dill-0.4.0-py3-none-any.whl", hash = "sha256:44f54bf6412c2c8464c14e8243eb163690a9800dbe2c367330883b19c7561049", size = 119668, upload-time = "2025-04-16T00:41:47.671Z" },
 ]
+
+[[package]]
+name = "docopt"
+version = "0.6.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz", hash = "sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491", size = 25901, upload-time = "2014-06-16T11:18:57.406Z" }
 
 [[package]]
 name = "executing"
@@ -579,6 +589,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/73/92/a8e2479937ff39185d20dd6a851c1a63e55849e447a55e798cc2e1f49c65/filelock-3.24.3.tar.gz", hash = "sha256:011a5644dc937c22699943ebbfc46e969cdde3e171470a6e40b9533e5a72affa", size = 37935, upload-time = "2026-02-19T00:48:20.543Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/9c/0f/5d0c71a1aefeb08efff26272149e07ab922b64f46c63363756224bd6872e/filelock-3.24.3-py3-none-any.whl", hash = "sha256:426e9a4660391f7f8a810d71b0555bce9008b0a1cc342ab1f6947d37639e002d", size = 24331, upload-time = "2026-02-19T00:48:18.465Z" },
+]
+
+[[package]]
+name = "fire"
+version = "0.7.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "termcolor" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c0/00/f8d10588d2019d6d6452653def1ee807353b21983db48550318424b5ff18/fire-0.7.1.tar.gz", hash = "sha256:3b208f05c736de98fb343310d090dcc4d8c78b2a89ea4f32b837c586270a9cbf", size = 88720, upload-time = "2025-08-16T20:20:24.175Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e5/4c/93d0f85318da65923e4b91c1c2ff03d8a458cbefebe3bc612a6693c7906d/fire-0.7.1-py3-none-any.whl", hash = "sha256:e43fd8a5033a9001e7e2973bab96070694b9f12f2e0ecf96d4683971b5ab1882", size = 115945, upload-time = "2025-08-16T20:20:22.87Z" },
 ]
 
 [[package]]
@@ -1581,7 +1603,6 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "datasets" },
-    { name = "deepcut" },
     { name = "gensim" },
     { name = "ipywidgets" },
     { name = "jupyterlab" },
@@ -1602,19 +1623,22 @@ dependencies = [
 
 [package.optional-dependencies]
 cpu = [
+    { name = "attacut" },
     { name = "tensorflow" },
     { name = "torch", version = "2.10.0", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(sys_platform == 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
     { name = "torch", version = "2.10.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(sys_platform != 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
 ]
 cu126 = [
+    { name = "attacut" },
     { name = "tensorflow", extra = ["and-cuda"], marker = "extra == 'extra-13-nlp-news-thai-cu126'" },
     { name = "torch", version = "2.10.0+cu126", source = { registry = "https://download.pytorch.org/whl/cu126" } },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "attacut", marker = "extra == 'cpu'", specifier = ">=1.0.6" },
+    { name = "attacut", marker = "extra == 'cu126'", specifier = ">=1.0.6" },
     { name = "datasets", specifier = ">=4.5.0" },
-    { name = "deepcut", specifier = ">=0.7.0.0" },
     { name = "gensim", specifier = ">=4.4.0" },
     { name = "ipywidgets", specifier = ">=8.1.8" },
     { name = "jupyterlab", specifier = ">=4.5.5" },
@@ -1648,6 +1672,17 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/54/d2/92fa3243712b9a3e8bafaf60aac366da1cada3639ca767ff4b5b3654ec28/notebook_shim-0.2.4.tar.gz", hash = "sha256:b4b2cfa1b65d98307ca24361f5b30fe785b53c3fd07b7a47e89acb5e6ac638cb", size = 13167, upload-time = "2024-02-14T23:35:18.353Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f9/33/bd5b9137445ea4b680023eb0469b2bb969d61303dedb2aac6560ff3d14a1/notebook_shim-0.2.4-py3-none-any.whl", hash = "sha256:411a5be4e9dc882a074ccbcae671eda64cceb068767e9a3419096986560e1cef", size = 13307, upload-time = "2024-02-14T23:35:16.286Z" },
+]
+
+[[package]]
+name = "nptyping"
+version = "2.0.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/48/03/3f5af42a8858c223f1a4b1d5a773f3a4f7cb9ae9dcbd1ad61bdb8539e633/nptyping-2.0.1-py3-none-any.whl", hash = "sha256:0fc5c4d76c65e12a77e750b9e2701dab6468d00926c8c4f383867bd70598a532", size = 19435, upload-time = "2022-04-28T21:02:07.815Z" },
 ]
 
 [[package]]
@@ -1836,7 +1871,7 @@ resolution-markers = [
     "sys_platform != 'emscripten' and sys_platform != 'win32'",
 ]
 dependencies = [
-    { name = "nvidia-cublas-cu12", version = "12.6.4.1", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
+    { name = "nvidia-cublas-cu12", version = "12.6.4.1", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'emscripten' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'win32' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fa/41/e79269ce215c857c935fd86bcfe91a451a584dfc27f1e068f568b9ad1ab7/nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_aarch64.whl", hash = "sha256:c9132cc3f8958447b4910a1720036d9eff5928cc3179b0a51fb6d167c6cc87d8", size = 705026878, upload-time = "2025-06-06T21:52:51.348Z" },
@@ -1869,7 +1904,7 @@ resolution-markers = [
     "sys_platform != 'emscripten' and sys_platform != 'win32'",
 ]
 dependencies = [
-    { name = "nvidia-nvjitlink-cu12", version = "12.6.85", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
+    { name = "nvidia-nvjitlink-cu12", version = "12.6.85", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'emscripten' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'win32' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/1f/37/c50d2b2f2c07e146776389e3080f4faf70bcc4fa6e19d65bb54ca174ebc3/nvidia_cufft_cu12-11.3.0.4-py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:d16079550df460376455cba121db6564089176d9bac9e4f360493ca4741b22a6", size = 200164144, upload-time = "2024-11-20T17:40:58.288Z" },
@@ -1942,9 +1977,9 @@ resolution-markers = [
     "sys_platform != 'emscripten' and sys_platform != 'win32'",
 ]
 dependencies = [
-    { name = "nvidia-cublas-cu12", version = "12.6.4.1", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
-    { name = "nvidia-cusparse-cu12", version = "12.5.4.2", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
-    { name = "nvidia-nvjitlink-cu12", version = "12.6.85", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
+    { name = "nvidia-cublas-cu12", version = "12.6.4.1", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'emscripten' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'win32' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-cusparse-cu12", version = "12.5.4.2", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'emscripten' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'win32' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-nvjitlink-cu12", version = "12.6.85", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'emscripten' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'win32' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/93/17/dbe1aa865e4fdc7b6d4d0dd308fdd5aaab60f939abfc0ea1954eac4fb113/nvidia_cusolver_cu12-11.7.1.2-py3-none-manylinux2014_aarch64.whl", hash = "sha256:0ce237ef60acde1efc457335a2ddadfd7610b892d94efee7b776c64bb1cac9e0", size = 157833628, upload-time = "2024-10-01T17:05:05.591Z" },
@@ -1981,7 +2016,7 @@ resolution-markers = [
     "sys_platform != 'emscripten' and sys_platform != 'win32'",
 ]
 dependencies = [
-    { name = "nvidia-nvjitlink-cu12", version = "12.6.85", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
+    { name = "nvidia-nvjitlink-cu12", version = "12.6.85", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'emscripten' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126') or (sys_platform == 'win32' and extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/eb/eb/6681efd0aa7df96b4f8067b3ce7246833dd36830bb4cec8896182773db7d/nvidia_cusparse_cu12-12.5.4.2-py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:d25b62fb18751758fe3c93a4a08eff08effedfe4edf1c6bb5afd0890fe88f887", size = 216451147, upload-time = "2024-11-20T17:44:18.055Z" },
@@ -3012,6 +3047,20 @@ wheels = [
 ]
 
 [[package]]
+name = "ssg"
+version = "0.0.8"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "fire" },
+    { name = "python-crfsuite" },
+    { name = "tqdm" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/27/36/43a2cc40874e7b2dadd02eaee22837830373d50cc1d76ca02b0f4beb42df/ssg-0.0.8.tar.gz", hash = "sha256:f6fff5f847435f231551b6ba40dd4dea0e188438d28693a05f8e54299b25abe5", size = 473555, upload-time = "2021-08-13T12:11:19.788Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8b/e2/dcc3244d8251e904c4a87ee9b6523d264b9f88879d4bc4ec6262de67af1e/ssg-0.0.8-py3-none-any.whl", hash = "sha256:15bc2a4307d1d37a5a77385f8b26178fcaada6c7bf2bf40511d1330f55d395c0", size = 473839, upload-time = "2021-08-13T12:11:17.305Z" },
+]
+
+[[package]]
 name = "stack-data"
 version = "0.6.3"
 source = { registry = "https://pypi.org/simple" }
@@ -3236,13 +3285,13 @@ resolution-markers = [
     "sys_platform == 'darwin'",
 ]
 dependencies = [
-    { name = "filelock", marker = "sys_platform == 'darwin'" },
-    { name = "fsspec", marker = "sys_platform == 'darwin'" },
-    { name = "jinja2", marker = "sys_platform == 'darwin'" },
-    { name = "networkx", marker = "sys_platform == 'darwin'" },
-    { name = "setuptools", marker = "sys_platform == 'darwin'" },
-    { name = "sympy", marker = "sys_platform == 'darwin'" },
-    { name = "typing-extensions", marker = "sys_platform == 'darwin'" },
+    { name = "filelock", marker = "(sys_platform == 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "fsspec", marker = "(sys_platform == 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "jinja2", marker = "(sys_platform == 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "networkx", marker = "(sys_platform == 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "setuptools", marker = "(sys_platform == 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "sympy", marker = "(sys_platform == 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "typing-extensions", marker = "(sys_platform == 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
 ]
 wheels = [
     { url = "https://download.pytorch.org/whl/cpu/torch-2.10.0-1-cp313-none-macosx_11_0_arm64.whl", hash = "sha256:b39cafff7229699f9d6e172cac74d85fd71b568268e439e08d9c540e54732a3e" },
@@ -3261,13 +3310,13 @@ resolution-markers = [
     "sys_platform != 'darwin' and sys_platform != 'emscripten' and sys_platform != 'win32'",
 ]
 dependencies = [
-    { name = "filelock", marker = "sys_platform != 'darwin'" },
-    { name = "fsspec", marker = "sys_platform != 'darwin'" },
-    { name = "jinja2", marker = "sys_platform != 'darwin'" },
-    { name = "networkx", marker = "sys_platform != 'darwin'" },
-    { name = "setuptools", marker = "sys_platform != 'darwin'" },
-    { name = "sympy", marker = "sys_platform != 'darwin'" },
-    { name = "typing-extensions", marker = "sys_platform != 'darwin'" },
+    { name = "filelock", marker = "(sys_platform != 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "fsspec", marker = "(sys_platform != 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "jinja2", marker = "(sys_platform != 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "networkx", marker = "(sys_platform != 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "setuptools", marker = "(sys_platform != 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "sympy", marker = "(sys_platform != 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "typing-extensions", marker = "(sys_platform != 'darwin' and extra == 'extra-13-nlp-news-thai-cpu') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
 ]
 wheels = [
     { url = "https://download.pytorch.org/whl/cpu/torch-2.10.0%2Bcpu-cp313-cp313-linux_aarch64.whl", hash = "sha256:fd215f3d0f681905c5b56b0630a3d666900a37fcc3ca5b937f95275c66f9fd9c" },
@@ -3293,30 +3342,30 @@ resolution-markers = [
     "sys_platform != 'emscripten' and sys_platform != 'win32'",
 ]
 dependencies = [
-    { name = "cuda-bindings", marker = "sys_platform == 'linux'" },
-    { name = "filelock" },
-    { name = "fsspec" },
-    { name = "jinja2" },
-    { name = "networkx" },
-    { name = "nvidia-cublas-cu12", version = "12.6.4.1", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
-    { name = "nvidia-cuda-cupti-cu12", version = "12.6.80", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
-    { name = "nvidia-cuda-nvrtc-cu12", version = "12.6.77", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
-    { name = "nvidia-cuda-runtime-cu12", version = "12.6.77", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
-    { name = "nvidia-cudnn-cu12", version = "9.10.2.21", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
-    { name = "nvidia-cufft-cu12", version = "11.3.0.4", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
-    { name = "nvidia-cufile-cu12", marker = "sys_platform == 'linux'" },
-    { name = "nvidia-curand-cu12", version = "10.3.7.77", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
-    { name = "nvidia-cusolver-cu12", version = "11.7.1.2", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
-    { name = "nvidia-cusparse-cu12", version = "12.5.4.2", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
-    { name = "nvidia-cusparselt-cu12", marker = "sys_platform == 'linux'" },
-    { name = "nvidia-nccl-cu12", version = "2.27.5", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
-    { name = "nvidia-nvjitlink-cu12", version = "12.6.85", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'linux'" },
-    { name = "nvidia-nvshmem-cu12", marker = "sys_platform == 'linux'" },
-    { name = "nvidia-nvtx-cu12", marker = "sys_platform == 'linux'" },
-    { name = "setuptools" },
-    { name = "sympy" },
-    { name = "triton", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions" },
+    { name = "cuda-bindings", marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "filelock", marker = "extra == 'extra-13-nlp-news-thai-cu126'" },
+    { name = "fsspec", marker = "extra == 'extra-13-nlp-news-thai-cu126'" },
+    { name = "jinja2", marker = "extra == 'extra-13-nlp-news-thai-cu126'" },
+    { name = "networkx", marker = "extra == 'extra-13-nlp-news-thai-cu126'" },
+    { name = "nvidia-cublas-cu12", version = "12.6.4.1", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-cuda-cupti-cu12", version = "12.6.80", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-cuda-nvrtc-cu12", version = "12.6.77", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-cuda-runtime-cu12", version = "12.6.77", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-cudnn-cu12", version = "9.10.2.21", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-cufft-cu12", version = "11.3.0.4", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-cufile-cu12", marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-curand-cu12", version = "10.3.7.77", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-cusolver-cu12", version = "11.7.1.2", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-cusparse-cu12", version = "12.5.4.2", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-cusparselt-cu12", marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-nccl-cu12", version = "2.27.5", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-nvjitlink-cu12", version = "12.6.85", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-nvshmem-cu12", marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "nvidia-nvtx-cu12", marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "setuptools", marker = "extra == 'extra-13-nlp-news-thai-cu126'" },
+    { name = "sympy", marker = "extra == 'extra-13-nlp-news-thai-cu126'" },
+    { name = "triton", marker = "(sys_platform == 'linux' and extra == 'extra-13-nlp-news-thai-cu126') or (extra == 'extra-13-nlp-news-thai-cpu' and extra == 'extra-13-nlp-news-thai-cu126')" },
+    { name = "typing-extensions", marker = "extra == 'extra-13-nlp-news-thai-cu126'" },
 ]
 wheels = [
     { url = "https://download.pytorch.org/whl/cu126/torch-2.10.0%2Bcu126-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:9ffbf240bc193841ba0a79976510aa9ec14c95a57699257b581bc782316b592f" },
